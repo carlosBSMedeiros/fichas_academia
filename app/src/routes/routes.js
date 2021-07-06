@@ -1,8 +1,8 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 
-const exercicioController = require('../controllers/exercicioController')
+const exercicioController = require('../controllers/exercicioController');
 
-router.get('/home', exercicioController.home)
+router.get('/home', exercicioController.home);
 
 module.exports = router;
