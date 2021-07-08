@@ -1,6 +1,18 @@
 const express = require('express');
 const app = express();
+
 app.use(express.json());
-app.use('/', require('./app/src/routes/routes')); 
+
+app.use('/', require('./src/app/routes/routes')); 
+
+const connection = require('./src/database/database');
+connection.authenticate().then(() => {
+	console.log('Conexão com o banco de dados efetuada com sucesso');
+}).catch(error =>{
+	console.log('Ocorreu um erro ao tentar se conectar ao banco de dados');
+	console.log(error);
+});
+
 const PORT = process.env.PORT || 3333;
+
 app.listen(PORT, () => console.log(`Servidor online na porta ${PORT}`));
