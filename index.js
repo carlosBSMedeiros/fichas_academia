@@ -13,6 +13,9 @@ connection.authenticate().then(() => {
 	console.log(error);
 });
 
+var GrupoMuscular = require('./src/app/models/GrupoMuscular');
+GrupoMuscular.init(connection);
+
 const PORT = process.env.PORT || 3333;
 
 app.listen(PORT, () => console.log(`Servidor online na porta ${PORT}`));
