@@ -10,7 +10,14 @@ connection.authenticate().then(() => {
 	console.log(error);
 });
 
+
+var Academia = require('../app/models/Academia');
+Academia.init(connection);
 var GrupoMuscular = require('../app/models/GrupoMuscular');
 GrupoMuscular.init(connection);
+var Exercicio = require('../app/models/Exercicio');
+Exercicio.init(connection);
+
+Exercicio.associate(connection.models);
 
 module.exports = connection;

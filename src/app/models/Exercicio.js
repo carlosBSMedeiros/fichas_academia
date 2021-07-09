@@ -3,9 +3,8 @@ const {Model, DataTypes} = require('sequelize');
 class Exercicio extends Model{
 	static init(sequelize){
 		super.init({
-			nome:{
-				type: DataTypes.STRING
-			}
+			nome: DataTypes.STRING,
+			descricao: DataTypes.TEXT
 		},{
 			tableName: 'exercicio',
 			createdAt: 'created_at',
@@ -13,6 +12,13 @@ class Exercicio extends Model{
 			sequelize
 		});
 	}
+
+	static associate(models){
+		this.belongsTo(models.GrupoMuscular, { foreignKey: 'id_grupo_muscular', as: 'tipo' }),
+		this.belongsTo(models.Academia, { foreignKey: 'id_academia', as: 'academia' });
+
+	}
+	
 }
 
 module.exports = Exercicio;
