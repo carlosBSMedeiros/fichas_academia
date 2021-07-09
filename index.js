@@ -3,18 +3,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/fichasAcademia', require('./src/app/routes/routes')); 
+app.use('/fichas-academia', require('./src/app/routes/routes'));
 
-const connection = require('./src/database/database');
-connection.authenticate().then(() => {
-	console.log('Conexão com o banco de dados efetuada com sucesso');
-}).catch(error =>{
-	console.log('Ocorreu um erro ao tentar se conectar ao banco de dados');
-	console.log(error);
-});
-
-var GrupoMuscular = require('./src/app/models/GrupoMuscular');
-GrupoMuscular.init(connection);
+// eslint-disable-next-line no-unused-vars
+require('./src/database/database');
 
 const PORT = process.env.PORT || 3333;
 

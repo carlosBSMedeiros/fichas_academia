@@ -1,13 +1,13 @@
-const { Model, DataTypes } = require('sequelize');
+const {Model, DataTypes} = require('sequelize');
 
-class GrupoMuscular extends Model{
+class Exercicio extends Model{
 	static init(sequelize){
 		super.init({
 			nome:{
 				type: DataTypes.STRING
 			}
 		},{
-			tableName: 'grupo_muscular',
+			tableName: 'exercicio',
 			createdAt: 'created_at',
 			updatedAt: 'updated_at',
 			sequelize
@@ -15,5 +15,4 @@ class GrupoMuscular extends Model{
 	}
 }
 
-
-module.exports = GrupoMuscular;
+module.exports = Exercicio;

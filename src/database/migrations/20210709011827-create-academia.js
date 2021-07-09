@@ -1,23 +1,27 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
 'use strict';
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		/**
-	 * Add altering commands here.
-	 *
-	 * Example:
-	 * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-	 */
-		await queryInterface.createTable('grupo_muscular', {
+		await queryInterface.createTable('academia', {
 			id: {
-				type: Sequelize.INTEGER,
+				type: Sequelize.UUID,
+				defaultValue: Sequelize.UUIDV4,
 				primaryKey: true,
-				autoIncrement: true,
 				allowNull: false,
 			},
 			nome: {
 				type: Sequelize.STRING,
+				allowNull: false
+			},
+			senha:{
+				type: Sequelize.STRING,
+				allowNull: false
+			},
+			ativo:{
+				type: Sequelize.BOOLEAN,
+				defaultValue: false,
 				allowNull: false
 			},
 			created_at: {
@@ -31,14 +35,9 @@ module.exports = {
 		});
 	},
 
-	// eslint-disable-next-line no-unused-vars
 	down: async (queryInterface, Sequelize) => {
-		/**
-	 * Add reverting commands here.
-	 *
-	 * Example:
-	 * await queryInterface.dropTable('users');
-	 */
-		await queryInterface.dropTable('grupoMuscular');
+	
+		await queryInterface.dropTable('academia');
+    
 	}
 };

@@ -3,10 +3,10 @@ const grupoMuscularController = require('../controllers/grupoMuscularController'
 module.exports = {
 
 	adicionaRotas(router){
-		router.get('/grupoMuscular/buscaGrupos', grupoMuscularController.readAll);
-		router.get('/grupoMuscular/buscaGrupo', grupoMuscularController.readByPk);
-		router.post('/grupoMuscular', grupoMuscularController.create);
-		router.put('/grupoMuscular', grupoMuscularController.alter);
+		router.get('/grupo-muscular/busca-grupos', grupoMuscularController.readAll);
+		router.get('/grupo-muscular/busca-grupo', grupoMuscularController.readByPk);
+		router.post('/grupo-muscular', grupoMuscularController.create);
+		router.put('/grupo-muscular', grupoMuscularController.alter);
 	}
 
 };
