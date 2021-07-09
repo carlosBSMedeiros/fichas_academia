@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/', require('./src/app/routes/routes')); 
+app.use('/fichasAcademia', require('./src/app/routes/routes')); 
 
 const connection = require('./src/database/database');
 connection.authenticate().then(() => {

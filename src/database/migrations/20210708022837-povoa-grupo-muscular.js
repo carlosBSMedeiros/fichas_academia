@@ -6,18 +6,28 @@ module.exports = {
 	up: async (queryInterface, Sequelize) => {
     
 		queryInterface.bulkInsert('grupoMuscular', [{
-			nome: 'Peito'
+			nome: 'Peito',
+			created_at: new Date(),
+			updated_at: new Date()
 		}, {
-			nome: 'Costas'
+			nome: 'Costas',
+			created_at: new Date(),
+			updated_at: new Date()
 		},
 		{
-			nome: 'Biceps'
+			nome: 'Biceps',
+			created_at: new Date(),
+			updated_at: new Date()
 		},
 		{
-			nome: 'Triceps'
+			nome: 'Triceps',
+			created_at: new Date(),
+			updated_at: new Date()
 		},
 		{
-			nome: 'Ombro - Lateral'
+			nome: 'Ombro - Lateral',
+			created_at: new Date(),
+			updated_at: new Date()
 		},
 		]);
 	},

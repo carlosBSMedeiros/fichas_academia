@@ -8,6 +8,8 @@ class GrupoMuscular extends Model{
 			}
 		},{
 			tableName: 'grupoMuscular',
+			createdAt: 'created_at',
+			updatedAt: 'updated_at',
 			sequelize
 		});
 	}
