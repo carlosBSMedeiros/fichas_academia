@@ -13,7 +13,9 @@ class Academia extends Model{
 			sequelize
 		});
 	}
-
+	static associate(models){
+		this.hasMany(models.Exercicio);
+	}
 }
 
 module.exports = Academia;

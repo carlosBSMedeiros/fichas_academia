@@ -19,5 +19,6 @@ var Exercicio = require('../app/models/Exercicio');
 Exercicio.init(connection);
 
 Exercicio.associate(connection.models);
+GrupoMuscular.associate(connection.models);
 
 module.exports = connection;

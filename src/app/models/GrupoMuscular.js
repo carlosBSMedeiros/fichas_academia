@@ -12,6 +12,11 @@ class GrupoMuscular extends Model{
 			updatedAt: 'updated_at',
 			sequelize
 		});
+
+	}
+
+	static associate(models){
+		this.hasMany(models.Exercicio, { foreignKey: 'id_grupo_muscular', targetKey: 'id' });
 	}
 }
 
