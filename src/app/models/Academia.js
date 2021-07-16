@@ -14,6 +14,7 @@ class Academia extends Model{
 		});
 	}
 	static associate(models){
+		this.hasMany(models.Ficha);
 		this.hasMany(models.Exercicio);
 	}
 }

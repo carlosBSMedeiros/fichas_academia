@@ -18,11 +18,7 @@ module.exports = {
 			});
 
 			if (erros.length > 0) {
-				var erroRet = '';
-				for (var erro of erros) {
-					erroRet += erro + ';';
-				}
-				return res.status(400).json({ msg: erroRet });
+				return res.status(400).json({ msg: erros });
 			}
 
 			const academia = await Academia.findByPk(id_academia);

@@ -14,6 +14,7 @@ class Exercicio extends Model{
 	}
 
 	static associate(models){
+		this.hasMany(models.FichaExercicio, {foreignKey: 'id_exercicio', as: 'exercicio'});
 		this.belongsTo(models.GrupoMuscular, { foreignKey: 'id_grupo_muscular', as: 'grupo_muscular' }),
 		this.belongsTo(models.Academia, { foreignKey: 'id_academia', as: 'academia' });
 

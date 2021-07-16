@@ -7,4 +7,7 @@ rotasGrupoMuscular.adicionaRotas(router);
 const rotasExercicio = require('./exercicioRoutes');
 rotasExercicio.adicionaRotas(router);
 
+const rotasFicha = require('./fichaRoutes');
+rotasFicha.adicionaRotas(router);
+
 module.exports = router;

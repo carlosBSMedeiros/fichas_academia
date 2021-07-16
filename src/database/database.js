@@ -18,7 +18,17 @@ GrupoMuscular.init(connection);
 var Exercicio = require('../app/models/Exercicio');
 Exercicio.init(connection);
 
+var Ficha = require('../app/models/Ficha');
+Ficha.init(connection);
+
+var FichaExercicio = require('../app/models/FichaExercicio');
+FichaExercicio.init(connection);
+
 Exercicio.associate(connection.models);
 GrupoMuscular.associate(connection.models);
+Ficha.associate(connection.models);
+FichaExercicio.associate(connection.models);
+
+
 
 module.exports = connection;
