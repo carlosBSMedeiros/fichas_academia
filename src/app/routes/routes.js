@@ -10,4 +10,7 @@ rotasExercicio.adicionaRotas(router);
 const rotasFicha = require('./fichaRoutes');
 rotasFicha.adicionaRotas(router);
 
+const rotasFichaExercicio = require('./fichasExercicioRoutes');
+rotasFichaExercicio.adicionaRotas(router);
+
 module.exports = router;

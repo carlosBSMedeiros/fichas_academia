@@ -38,7 +38,10 @@ module.exports = {
 				descricao
 			});
 
-			return res.status(200).json({ msg: 'Exercicio criado com sucesso', exercicio });
+			return res.status(200).json({
+				msg: 'Exercicio criado com sucesso',
+				exercicio
+			});
 		} catch (erro) {
 			console.log('erro no cadastro');
 			return res.status(500).json({ msg: erro });
@@ -126,7 +129,7 @@ module.exports = {
 				}
 			});
 
-			return res.status(200).json({ msg: `Exercicio com id ${id} excluído com sucesso` });
+			return res.status(200).json({ msg: 'Exercicio excluído com sucesso' });
 		} catch (erro) {
 			console.log(erro);
 			return res.status(500).json({ msg: erro });

@@ -79,7 +79,7 @@ module.exports = {
         
 			return res.status(200).json({
 				msg: 'Ficha alterada com sucesso',
-				fichaAlter
+				ficha: fichaAlter
 			});
 		}catch(error){
 			return res.status(500).json({msg: error});
@@ -102,7 +102,7 @@ module.exports = {
 				}
 			});
 
-			return res.status(200).json({msg: ` Ficha com id ${id} excluída com sucesso`});
+			return res.status(200).json({msg: 'Ficha excluída com sucesso'});
 
 		}catch(error){
 			return res.status(500).json({msg: error});
@@ -112,7 +112,8 @@ module.exports = {
 	async readAll(req, res){
 		try{
             
-			const {id_academia} = req.body;
+			const {id_academia} = req.query;
+			console.log(id_academia);
 
 			const erros = validaCamposNulos({id_academia});
 
@@ -142,9 +143,10 @@ module.exports = {
 				]
 			});
 
-			return res.status(200).json({msg: fichas});
+			return res.status(200).json({fichas});
 
 		}catch(error){
+			console.log(error);
 			return res.status(500).json({msg: error});
 		}
 	}
