@@ -1,4 +1,4 @@
-exports.dbName = 'fichas_academia';
-exports.dbPassword = '2001';
-exports.dbUser = 'postgres';
-exports.dbURL ='postgres://ccsmncdy:WzFSuBR_SmXq52-mg4pD3iBW8qqhags_@tuffi.db.elephantsql.com/ccsmncdy';
+exports.dbName = 'db_name_local';
+exports.dbPassword = 'pw_local';
+exports.dbUser = 'user_local';
+exports.dbURL ='uri';
