@@ -5,6 +5,7 @@ class Academia extends Model{
 		super.init({
 			nome: DataTypes.STRING,
 			senha: DataTypes.STRING,
+			email: DataTypes.STRING,
 			ativo: DataTypes.BOOLEAN
 		},{
 			tableName: 'academia',

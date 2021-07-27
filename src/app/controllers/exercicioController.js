@@ -9,7 +9,8 @@ module.exports = {
 	async create(req, res) {
 		try {
 
-			const { id_academia, id_grupo_muscular, nome, descricao } = req.body;
+			const id_academia = req.cookies.idAcad;
+			const { id_grupo_muscular, nome, descricao } = req.body;
 
 			var erros = validaCampos.validaCamposNulos({
 				id_academia,
@@ -51,7 +52,12 @@ module.exports = {
 
 	async readAll(req, res) {
 
+		const id_academia = req.cookies.idAcad;
+
 		const exercicios = await Exercicio.findAll({
+			where:{
+				id_academia
+			},
 			include: [
 				{
 					model: GrupoMuscular,
@@ -68,11 +74,10 @@ module.exports = {
 	async alter(req, res) {
 
 		try {
-			const { id, id_academia, id_grupo_muscular, nome, descricao } = req.body;
+			const { id, id_grupo_muscular, nome, descricao } = req.body;
 
 			var erros = validaCampos.validaCamposNulos({
 				id,
-				id_academia,
 				id_grupo_muscular,
 				nome
 			});
@@ -90,7 +95,6 @@ module.exports = {
 
 			const novoExercicio = await Exercicio.update({
 				id,
-				id_academia,
 				id_grupo_muscular,
 				nome,
 				descricao

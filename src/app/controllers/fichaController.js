@@ -10,8 +10,8 @@ module.exports = {
 	async create(req, res){
 
 		try{
-
-			const {id_academia, nome, nome_aluno} = req.body;
+			const id_academia = req.cookies.idAcad;
+			const {nome, nome_aluno} = req.body;
             
 			var erros = validaCampos.validaCamposNulos({
 				id_academia,
@@ -46,11 +46,10 @@ module.exports = {
 	async alter(req,res){
         
 		try{
-			const {id, id_academia, nome, nome_aluno} = req.body;
+			const {id,  nome, nome_aluno} = req.body;
             
 			var erros = validaCampos.validaCamposNulos({
 				id,
-				id_academia
 			});
 
 			if (erros.length > 0) {
@@ -60,11 +59,6 @@ module.exports = {
 			const ficha = await Ficha.findByPk(id);
 			if (!ficha) {
 				return res.status(400).json({ msg: `Erro. Ficha com id ${id} não existe` });
-			}
-            
-			const academia = await Academia.findByPk(id_academia);
-			if (!academia) {
-				return res.status(400).json({ msg: 'Erro. Academia não existe' });
 			}
 
 			const fichaAlter = await Ficha.update({
@@ -112,8 +106,7 @@ module.exports = {
 	async readAll(req, res){
 		try{
             
-			const {id_academia} = req.query;
-			console.log(id_academia);
+			const id_academia = req.cookies.idAcad;
 
 			const erros = validaCamposNulos({id_academia});
 

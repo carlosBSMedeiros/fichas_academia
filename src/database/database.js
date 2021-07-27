@@ -29,6 +29,4 @@ GrupoMuscular.associate(connection.models);
 Ficha.associate(connection.models);
 FichaExercicio.associate(connection.models);
 
-
-
 module.exports = connection;

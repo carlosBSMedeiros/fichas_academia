@@ -6,6 +6,7 @@ module.exports = {
 	username: env.dbUser,
 	password: env.dbPassword,
 	database: env.dbName,
+	logging: false,
 	denife: {
 		underscored: true,
 		timestamps: true,

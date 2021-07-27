@@ -1,7 +1,15 @@
 const express = require('express');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
+
+const conexao = require('./src/database/database');
+
+require('./src/config/sessionConfig')(app, session, conexao);
 
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -10,11 +18,8 @@ app.use((req, res, next) => {
 	next();
 });
 
-
 app.use('/fichas-academia', require('./src/app/routes/routes'));
 
-// eslint-disable-next-line no-unused-vars
-require('./src/database/database');
 
 const PORT = process.env.PORT || 3333;
 

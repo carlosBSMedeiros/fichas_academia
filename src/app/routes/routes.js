@@ -13,4 +13,7 @@ rotasFicha.adicionaRotas(router);
 const rotasFichaExercicio = require('./fichasExercicioRoutes');
 rotasFichaExercicio.adicionaRotas(router);
 
+const rotasAutenticacao = require('./autenticacaoRoutes');
+rotasAutenticacao.adicionaRotas(router);
+
 module.exports = router;
