@@ -20,7 +20,6 @@ app.use((req, res, next) => {
 
 app.use('/fichas-academia', require('./src/app/routes/routes'));
 
-
 const PORT = process.env.PORT || 3333;
 
 app.listen(PORT, () => console.log(`Servidor online na porta ${PORT}`));
