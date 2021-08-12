@@ -1,8 +1,7 @@
 const Sequelize = require('sequelize');
 const dbConfig = require('../config/DB_config');
-const env = require('../config/environment');
 
-const connection = new Sequelize(env.dbURL, dbConfig);
+const connection = new Sequelize(process.env.POSTGRES_URL, dbConfig);
 
 connection.authenticate().then(() => {
 	console.log('Conexão com o banco de dados efetuada com sucesso');
